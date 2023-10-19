@@ -1,0 +1,60 @@
+.kef {
+  padding: 16px;
+  border-left: 2px solid $button-sea;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &_about {
+    display: grid;
+    grid-template-areas:
+      'forecast forecast '
+      'time coef';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 14px 36px;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    row-gap: 8px;
+    column-gap: 12px;
+
+    &_forecast {
+      text-transform: uppercase;
+      @include fonts(12px, $black40, 600, 14px);
+    }
+
+    &_time {
+      @include fonts(16px, $black80, 600, 18px);
+    }
+  }
+
+  &_coef {
+    display: flex;
+    grid-area: coef;
+    gap: 8px;
+    &_icon {
+      grid-area: icon;
+      background-image: url('../assets/icons/logoCoef.svg');
+      width: 32px;
+      height: 32px;
+      background-size: cover;
+    }
+
+    &_name {
+      grid-area: name;
+      @include fonts(12px, 400, 14px);
+    }
+    &_data {
+      @include fonts(18px, $black80, 600, 22px); //исправить на 500 и друго шрифт
+    }
+  }
+
+  &_bet {
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    height: 40px;
+    padding: 12px 16px;
+    background-color: $button-sea;
+    @include fonts(14px, $primary, 600, 16px);
+  }
+}

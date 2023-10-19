@@ -1,15 +1,82 @@
 // @import '../../assets/images/face.jpg';
 
 .expert {
-  margin: 16px;
-  width: 100%;
+  margin: 16px 16px 0;
+  padding-bottom: 16px;
+  // width: 100%;
   display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $black20;
 
   &_image {
-    // min-width: 100%;
-    // min-height: 100%;
     background-size: cover;
+    object-fit: none;
     background-image: url('../assets/images/avatar.png');
-    @include circle(32px)
+    @include circle(32px);
+    margin-right: 8px;
+  }
+
+  &_grid {
+    display: grid;
+    // grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(2, 16px);
+    grid-auto-flow: column;
+    justify-content: space-between;
+    gap: 2px;
+    width: 100%;
+    margin-right: auto;
+  }
+
+  &_name {
+    @include fonts(14px, 600, 16px);
+  }
+
+  &_stats {
+    display: flex;
+    align-items: baseline;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    &_stat {
+      @include fonts(14px, 400, 16px);
+      
+
+      &_line {
+        border-right: 1px solid $black40;
+        width: 1px;
+        height: 10px;
+        transform: skewX(-10deg);
+        margin: 0 4px;
+      }
+
+      &_wins {
+        color: $wins;
+      }
+      &_draws {
+        color: $draws;
+      }
+      &_loses {
+        color: $loses;
+      }
+    }
+  }
+
+  &_term {
+    @include fonts(14px, $black40, 400, 16px);
+  }
+
+  &_profit {
+    @include fonts(14px, $black40, 600, 16px);
+    &_wins {
+      color: $wins;
+    }
+    &_draws {
+      color: $draws;
+    }
+    &_loses {
+      color: $loses;
+    }
   }
 }

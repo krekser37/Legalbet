@@ -1,12 +1,20 @@
-// @import '../assets/normalize.css';
-@import './fonts.scss';
+@import '../assets/normalize.css';
+// @import '../assets/fonts/fonts.scss';
 @import './variables/index.scss';
 @import './mixins/index.scss';
 @import '../blocks/index.scss';
 
-.image{
-  width: 300px;
-  height: 300px;
-  background-size: cover;
-  // background-image: url('../assets/images/avatar.png');
-}
+// .image {
+//   width: 300px;
+//   height: 300px;
+//   object-fit: contain;
+//   background-image: url('../assets/images/avatar.png');
+// }
+
+// .kef_coef_icon {
+//   background-size: cover;
+//   object-fit: none;
+//   background-image: url('../assets/icons/logoCoef.svg');
+//   width: 32px;
+//   height: 32px;
+// }

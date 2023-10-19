@@ -4,7 +4,7 @@
   }
 }
 
-@mixin font-source-sans($size: false, $colour: false, $weight: false, $lh: false) {
+@mixin fonts($size: false, $colour: false, $weight: false, $lh: false) {
   font-family: 'Proxima Nova', sans-serif;
   @if $size {
     font-size: $size;

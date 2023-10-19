@@ -1,0 +1,4 @@
+.forecast {
+  padding: 16px;
+  @include fonts(16px, $black60, 400, 24px);
+}
