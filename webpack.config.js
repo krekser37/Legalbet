@@ -10,6 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
     publicPath: '',
+    assetModuleFilename: 'assets/[hash][ext]'
   },
   mode: 'development',
   devServer: {
@@ -18,13 +19,6 @@ module.exports = {
     port: 8080,
     open: true,
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './index.html',
-    }),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({ filename: '[name].[[hash].css' }),
-  ],
   module: {
     rules: [
       {
@@ -32,8 +26,23 @@ module.exports = {
         use: 'babel-loader',
         exclude: '/node_modules/',
       },
+      // {
+      //   test: /\.(png|svg|jpg|gif|woff2?|eot|ttf|otf)$/,
+      //   type: 'asset/resource',
+      //   generator:{
+      //     publicPath: 'assets/',
+      //     filename: "static/[hash][ext]",
+      //   }
+      // },
       {
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        test: /\.woff2?$/,
+        type: 'asset/resource',
+        generator:{
+          filename: "fonts/[name][ext]",
+        }
+      },
+      {
+        test: /\.png|jpg$/,
         type: 'asset/resource',
       },
       {
@@ -49,4 +58,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html',
+    }),
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+  ],
 };

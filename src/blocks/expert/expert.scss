@@ -1,0 +1,15 @@
+// @import '../../assets/images/face.jpg';
+
+.expert {
+  margin: 16px;
+  width: 100%;
+  display: flex;
+
+  &_image {
+    // min-width: 100%;
+    // min-height: 100%;
+    background-size: cover;
+    background-image: url('../assets/images/avatar.png');
+    @include circle(32px)
+  }
+}

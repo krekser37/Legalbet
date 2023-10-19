@@ -1,0 +1,18 @@
+@import './color.scss';
+@import './media.scss';
+@import './font-variables';
+
+
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  font-family: $mainFont;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
