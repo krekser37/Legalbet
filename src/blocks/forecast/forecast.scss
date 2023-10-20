@@ -2,13 +2,49 @@
   padding: 16px;
   @include fonts(16px, $black60, 400, 24px);
   position: relative;
+
   &_description {
-    -webkit-line-clamp: 5;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    // white-space: nowrap;
+    height: 120px;
     overflow: hidden;
+    // -webkit-line-clamp: 5;
+    // display: -webkit-box;
+    // -webkit-box-orient: vertical;
+
     text-overflow: ellipsis;
+    // transition: transform 10s 1s;
+    transition: height 5s;
+    // transform: translateY(-150%);
+    // animation: ani 3s forwards;
+
+    &.open {
+      height: auto;
+    }
+
+    // &.open {
+    //   animation: aniopen 3s forwards;
+    // }
+
+    // &.close {
+    //   animation: aniclose 3s forwards;
+    // }
+
+    // @keyframes aniopen {
+    //   0% {
+    //     height: 120px;
+    //   }
+    //   100% {
+    //     height: 90vh;
+    //   }
+    // }
+
+    // @keyframes aniclose {
+    //   0% {
+    //     height: 90vh;
+    //   }
+    //   100% {
+    //     height: 120px;
+    //   }
+    // }
   }
 
   &_shadow {
@@ -17,9 +53,13 @@
     height: 27px;
     left: 0;
     right: 0;
-    top: 107px;
+    bottom: 18px;
     z-index: 1;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.67%, #fff 100%);
+    transition: height 3s;
+    &.open {
+      height: 0;
+    }
   }
 
   &_button {
@@ -35,24 +75,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+
     &:hover {
       box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.2);
     }
   }
+
   &_down {
     background-image: url('../assets/icons/down.svg');
     width: 16px;
     height: 16px;
     background-color: transparent;
-    border: 0;
     outline: none;
     stroke: #000;
     color: white;
     border-color: transparent;
     stroke-width: 0;
-    &:hover circle {
-      stroke: #000;
+    transition: transform 3s;
+    transform-origin: center center;
+    border: none;
+    box-shadow: none;
+
+    &.open {
+      transform: rotate(-180deg);
     }
   }
 }
