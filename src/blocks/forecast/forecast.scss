@@ -1,4 +1,58 @@
 .forecast {
   padding: 16px;
   @include fonts(16px, $black60, 400, 24px);
+  position: relative;
+  &_description {
+    -webkit-line-clamp: 5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    // white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &_shadow {
+    content: '';
+    position: absolute;
+    height: 27px;
+    left: 0;
+    right: 0;
+    top: 107px;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.67%, #fff 100%);
+  }
+
+  &_button {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translate3d(-50%, -50%, -0);
+    z-index: 4;
+    cursor: pointer;
+    @include circle(40px, $primary);
+    box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    &:hover {
+      box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+  &_down {
+    background-image: url('../assets/icons/down.svg');
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    stroke: #000;
+    color: white;
+    border-color: transparent;
+    stroke-width: 0;
+    &:hover circle {
+      stroke: #000;
+    }
+  }
 }

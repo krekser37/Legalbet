@@ -20,9 +20,10 @@
   }
 }
 
-@mixin circle($width, $color: transparent) {
+@mixin circle($width, $color: transparent, $border: none) {
   width: $width;
   height: $width;
   border-radius: $width/2;
   background-color: $color;
+  border: $border
 }
