@@ -1,12 +1,17 @@
-// @import '../../assets/images/face.jpg';
-
 .expert {
   margin: 16px 16px 0;
   padding-bottom: 16px;
-  // width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid $black20;
+  border-bottom: 1px solid $black10;
+
+  @include desktop {
+    margin: 24px 24px 0;
+    padding-bottom: 20px;
+    min-height: 40px;
+    align-items: center;
+  }
 
   &_image {
     background-size: cover;
@@ -16,22 +21,35 @@
     margin-right: 8px;
   }
 
-  &_grid {
+  &_about {
     display: grid;
-    // grid-template-columns: auto 1fr;
+    grid-template-areas:
+      'name term'
+      'stats profit';
+    grid-template-columns: auto auto;
     grid-template-rows: repeat(2, 16px);
     grid-auto-flow: column;
     justify-content: space-between;
     gap: 2px;
     width: 100%;
     margin-right: auto;
+
+    @include desktop {
+      grid-template-areas:
+        'name stats'
+        'term stats';
+      grid-template-columns: 1fr auto;
+      column-gap: 12px;
+    }
   }
 
   &_name {
+    grid-area: name;
     @include fonts(14px, 600, 16px);
   }
 
   &_stats {
+    grid-area: stats;
     display: flex;
     align-items: baseline;
     list-style-type: none;
@@ -39,9 +57,12 @@
     margin: 0;
     text-align: center;
 
+    @include desktop {
+      display: none;
+    }
+
     &_stat {
       @include fonts(14px, 400, 16px);
-      
 
       &_line {
         border-right: 1px solid $black40;
@@ -49,6 +70,9 @@
         height: 10px;
         transform: skewX(-10deg);
         margin: 0 4px;
+        @include desktop {
+          display: none;
+        }
       }
 
       &_wins {
@@ -61,14 +85,20 @@
         color: $loses;
       }
     }
+
+    @include desktop {
+      gap: 12px;
+      text-align: start;
+    }
   }
 
   &_term {
-    content: "30 дней";
+    grid-area: term;
     @include fonts(14px, $black40, 400, 16px);
   }
 
   &_profit {
+    grid-area: profit;
     @include fonts(14px, $black40, 600, 16px);
     &_wins {
       color: $wins;
@@ -78,6 +108,53 @@
     }
     &_loses {
       color: $loses;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &_mobile {
+    display: none;
+
+    @include desktop {
+      display: block;
+      border-spacing: 10px 0;
+      padding: 0;
+      font-family: 'Proxima Nova';
+      @include fonts(14px, $black40, 600, 16px);
+      &_thead {
+        text-align: left;
+
+        &_th {
+          vertical-align: top;
+          border-bottom: 1px solid $black10;
+          min-width: 64px;
+          padding: 0 0 4px;
+
+          &_name {
+            @include fonts(12px, $black80, 400, 14px);
+          }
+        }
+      }
+
+      &_tbody {
+        &_td {
+          padding: 4px 0 0;
+          vertical-align: top;
+        }
+      }
+
+      &_wins {
+        color: $wins;
+      }
+      &_draws {
+        color: $draws;
+      }
+      &_loses {
+        color: $loses;
+      }
     }
   }
 }

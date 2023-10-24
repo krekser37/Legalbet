@@ -42,7 +42,11 @@
       @include fonts(12px, 400, 14px);
     }
     &_data {
-      @include fonts(18px, $black80, 600, 22px); //исправить на 500 и друго шрифт
+      @include fonts(18px, $black80, 600, 22px);
+
+      @include desktop {
+        @include fonts(20px, $black80, 600, 24px);
+      }
     }
   }
 
@@ -54,7 +58,7 @@
     border: none;
     margin-top: 8px;
     background-color: $button-sea;
-    @include fonts(14px, $primary, 600, 16px);
+    @include fonts(14px, $primary, 400, 16px);
     transition: 1s;
     &:hover {
       opacity: 0.8;

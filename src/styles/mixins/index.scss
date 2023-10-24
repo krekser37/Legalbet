@@ -4,6 +4,12 @@
   }
 }
 
+@mixin mobile {
+  @media screen and (max-width: 744px) {
+    @content;
+  }
+}
+
 @mixin fonts($size: false, $colour: false, $weight: false, $lh: false) {
   font-family: 'Proxima Nova', sans-serif;
   @if $size {
@@ -25,5 +31,5 @@
   height: $width;
   border-radius: $width/2;
   background-color: $color;
-  border: $border
+  border: $border;
 }
