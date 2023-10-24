@@ -1,6 +1,6 @@
 .forecast {
-  padding: 16px;
-  @include fonts(16px, $black60, 400, 24px);
+  padding: $mobilePadding;
+  @include fonts($lFontSize, $black60, $regularFont, $xlFontLh);
   position: relative;
 
   &_description {
@@ -72,6 +72,6 @@
   }
 
   @include desktop {
-    padding: 20px 24px 24px;
+    padding: $desktopPadding $lDesktopPadding $lDesktopPadding;
   }
 }

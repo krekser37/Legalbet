@@ -1,14 +1,14 @@
 .expert {
-  margin: 16px 16px 0;
-  padding-bottom: 16px;
+  margin: $mobileMargin $mobileMargin 0;
+  padding-bottom: $mobilePadding;
   height: 100%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid $black10;
 
   @include desktop {
-    margin: 24px 24px 0;
-    padding-bottom: 20px;
+    margin: $desktopMargin $desktopMargin 0;
+    padding-bottom: $desktopPadding;
     min-height: 40px;
     align-items: center;
   }
@@ -45,7 +45,7 @@
 
   &_name {
     grid-area: name;
-    @include fonts(14px, 600, 16px);
+    @include fonts($mFontSize, $black80, $semiboldFont, $lFontLh);
   }
 
   &_stats {
@@ -62,7 +62,7 @@
     }
 
     &_stat {
-      @include fonts(14px, 400, 16px);
+      @include fonts($mFontSize, $black40, $regularFont, $lFontLh);
 
       &_line {
         border-right: 1px solid $black40;
@@ -94,12 +94,12 @@
 
   &_term {
     grid-area: term;
-    @include fonts(14px, $black40, 400, 16px);
+    @include fonts($mFontSize, $black40, $regularFont, $lFontLh);
   }
 
   &_profit {
     grid-area: profit;
-    @include fonts(14px, $black40, 600, 16px);
+    @include fonts($mFontSize, $black40, $semiboldFont, $lFontLh);
     &_wins {
       color: $wins;
     }
@@ -122,8 +122,7 @@
       display: block;
       border-spacing: 10px 0;
       padding: 0;
-      font-family: 'Proxima Nova';
-      @include fonts(14px, $black40, 600, 16px);
+      @include fonts($lFontSize, $black40, $semiboldFont, $lFontLh);
       &_thead {
         text-align: left;
 
@@ -134,7 +133,7 @@
           padding: 0 0 4px;
 
           &_name {
-            @include fonts(12px, $black80, 400, 14px);
+            @include fonts($sFontSize, $black80, $regularFont, $mFontSize);
           }
         }
       }

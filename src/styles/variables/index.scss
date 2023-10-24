@@ -1,7 +1,6 @@
 @import './color.scss';
 @import './media.scss';
-@import './font-variables';
-
+@import './variables';
 
 body,
 button,
@@ -12,11 +11,10 @@ h4,
 h5,
 p {
   margin: 0;
-  // font-family: $mainFont;
+  font-family: $mainFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 body {
   background-color: $black20;
