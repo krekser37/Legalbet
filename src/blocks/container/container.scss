@@ -1,9 +1,8 @@
 .container {
   background-color: $primary;
   display: flex;
-  margin: 40px auto;
+  margin: 40px 10px;
   padding-bottom: 16px;
   flex-direction: column;
-  max-width: 351px;
   border-radius: 8px;
 }

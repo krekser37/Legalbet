@@ -6,45 +6,15 @@
   &_description {
     height: 120px;
     overflow: hidden;
-    // -webkit-line-clamp: 5;
-    // display: -webkit-box;
-    // -webkit-box-orient: vertical;
-
-    text-overflow: ellipsis;
-    // transition: transform 10s 1s;
+    -webkit-line-clamp: 5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
     transition: height 5s;
-    // transform: translateY(-150%);
-    // animation: ani 3s forwards;
 
     &.open {
       height: auto;
+      -webkit-box-orient:inherit;
     }
-
-    // &.open {
-    //   animation: aniopen 3s forwards;
-    // }
-
-    // &.close {
-    //   animation: aniclose 3s forwards;
-    // }
-
-    // @keyframes aniopen {
-    //   0% {
-    //     height: 120px;
-    //   }
-    //   100% {
-    //     height: 90vh;
-    //   }
-    // }
-
-    // @keyframes aniclose {
-    //   0% {
-    //     height: 90vh;
-    //   }
-    //   100% {
-    //     height: 120px;
-    //   }
-    // }
   }
 
   &_shadow {
@@ -53,10 +23,10 @@
     height: 27px;
     left: 0;
     right: 0;
-    bottom: 18px;
+    bottom: 16px;
     z-index: 1;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 16.67%, #fff 100%);
-    transition: height 3s;
+    transition: height 5s;
     &.open {
       height: 0;
     }
@@ -91,7 +61,7 @@
     color: white;
     border-color: transparent;
     stroke-width: 0;
-    transition: transform 3s;
+    transition: transform 5s;
     transform-origin: center center;
     border: none;
     box-shadow: none;

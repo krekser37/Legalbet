@@ -8,12 +8,9 @@ export const forecastDescription = document.querySelector(
 );
 export const forecastShadow = document.querySelector('.forecast_shadow');
 
-console.log(getComputedStyle(forecastDescription).height);
-
 forecastButton.addEventListener('click', function () {
   const heightBlock = getComputedStyle(forecastDescription).height;
   console.log(heightBlock);
-  forecastDescription.style.height;
   if (heightBlock == '120px') {
     (forecastDescription.style.height =
       forecastDescription.scrollHeight + 'px'),
