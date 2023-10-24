@@ -64,6 +64,7 @@
   }
 
   &_term {
+    content: "30 дней";
     @include fonts(14px, $black40, 400, 16px);
   }
 

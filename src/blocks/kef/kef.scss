@@ -1,34 +1,32 @@
 .kef {
   padding: 16px;
   border-left: 2px solid $button-sea;
-  display: flex;
+  display: grid;
   flex-direction: column;
-  gap: 16px;
+  grid-template-areas:
+    'forecast forecast '
+    'time coef'
+    'bet bet';
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 14px 36px 48px;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  row-gap: 8px;
+  column-gap: 12px;
 
-  &_about {
-    display: grid;
-    grid-template-areas:
-      'forecast forecast '
-      'time coef';
-    grid-template-columns: auto 1fr;
-    grid-template-rows: 14px 36px;
-    grid-auto-flow: column;
-    justify-content: space-between;
-    row-gap: 8px;
-    column-gap: 12px;
+  &_forecast {
+    text-transform: uppercase;
+    @include fonts(12px, $black40, 600, 14px);
+  }
 
-    &_forecast {
-      text-transform: uppercase;
-      @include fonts(12px, $black40, 600, 14px);
-    }
-
-    &_time {
-      @include fonts(16px, $black80, 600, 18px);
-    }
+  &_time {
+    @include fonts(16px, $black80, 600, 18px);
   }
 
   &_coef {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
     grid-area: coef;
     gap: 8px;
     &_icon {
@@ -49,16 +47,33 @@
   }
 
   &_bet {
+    grid-area: bet;
+    padding: 0;
     cursor: pointer;
     border-radius: 4px;
     border: none;
-    height: 40px;
-    padding: 12px 16px;
+    margin-top: 8px;
     background-color: $button-sea;
     @include fonts(14px, $primary, 600, 16px);
     transition: 1s;
     &:hover {
       opacity: 0.8;
+    }
+  }
+
+  @include desktop {
+    padding: 24px;
+    grid-template-areas:
+      'forecast coef bet'
+      'time coef bet';
+    grid-template-columns: auto 1fr 140px;
+    grid-template-rows: 14px 20px;
+    column-gap: 16px;
+    &_coef {
+      gap: 12px;
+    }
+    &_bet {
+      margin-top: 0;
     }
   }
 }
