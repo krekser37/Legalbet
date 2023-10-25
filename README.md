@@ -22,8 +22,9 @@
 ## Результат
 
 ### mobile
+![mobile](https://github.com/krekser37/Legalbet/blob/master/mobile.png)
 ### desktop
-
+![desktop](https://github.com/krekser37/Legalbet/blob/master/desktop.png)
 ## Локальный запуск проекта:
 
 * Выполните `npm install && npm run dev` в терминале, находясь в папке проекта.
